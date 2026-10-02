@@ -116,7 +116,7 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size
 .pdf-badge{display:inline-flex;align-items:center;gap:5px;padding:6px 13px;border-radius:20px;font-size:13px;font-weight:700;cursor:pointer;border:1px solid;transition:all .15s;user-select:none;white-space:nowrap;flex-shrink:0}
 .pdf-badge:active{opacity:.7}
 .pdf-badge.view{background:rgba(0,212,200,.1);border-color:rgba(0,212,200,.3);color:var(--cyan)}
-
+ 
 .eright{text-align:right;flex-shrink:0;min-width:80px}
 .eval{font-family:var(--fh);font-size:19px;font-weight:700;color:var(--cyan);white-space:nowrap}
 .eacts{display:flex;gap:6px;margin-top:8px;justify-content:flex-end}
@@ -191,7 +191,7 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size
 .pdf-att{display:flex;align-items:center;gap:10px;background:rgba(0,212,200,.08);border:1px solid rgba(0,212,200,.25);border-radius:10px;padding:11px 13px;margin-top:8px}
 .pdf-att-name{font-size:14px;color:var(--cyan);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pdf-rm{background:none;border:none;color:var(--red);font-size:18px;cursor:pointer;flex-shrink:0;padding:0 4px}
-
+ 
 /* ─── PDF VIEWER ─── */
 .pdf-viewer{position:fixed;inset:0;background:#0a0c12;z-index:300;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .2s}
 .pdf-viewer.open{opacity:1;visibility:visible}
@@ -201,7 +201,7 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size
 .pvbtn:active{opacity:.65}
 .pvbtn.close-btn{background:var(--card2);border-color:var(--border2);color:var(--muted);padding:0;width:36px}
 .pdf-iframe{flex:1;width:100%;border:none;background:#fff}
-
+ 
 /* Tela de compartilhamento (sempre visível no iOS, botão no desktop) */
 .pdf-actions-screen{flex:1;display:none;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;gap:0;overflow-y:auto}
 .pdf-actions-screen.show{display:flex}
@@ -219,7 +219,7 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size
 .pa-em{background:linear-gradient(135deg,var(--blue),#2255cc);color:#fff}
 .pa-sep{width:100%;max-width:320px;display:flex;align-items:center;gap:10px;color:var(--dim);font-size:13px;margin:4px 0 10px}
 .pa-sep::before,.pa-sep::after{content:'';flex:1;height:1px;background:var(--border2)}
-
+ 
 .bk-section{margin-bottom:4px}
 .bk-title{font-family:var(--fh);font-size:17px;font-weight:700;margin-bottom:6px}
 .bk-desc{font-size:14px;color:var(--muted);line-height:1.5}
@@ -377,7 +377,7 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size
     </nav>
   </div>
 </div>
-
+ 
 <!-- MODAL EXAME -->
 <div class="overlay" id="ov-exame" onclick="ovClose(event,'ov-exame')">
   <div class="modal">
@@ -421,7 +421,7 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size
     <div class="mfoot"><button class="bcancel" onclick="closeOv('ov-exame')">Cancelar</button><button class="bsave" onclick="saveEntry()">Salvar Exame</button></div>
   </div>
 </div>
-
+ 
 <!-- MODAL CLÍNICA -->
 <div class="overlay" id="ov-cl" onclick="ovClose(event,'ov-cl')">
   <div class="modal">
@@ -437,7 +437,7 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size
     <div class="mfoot"><button class="bcancel" onclick="closeOv('ov-cl')">Cancelar</button><button class="bsave" onclick="saveCl()">Salvar Clínica</button></div>
   </div>
 </div>
-
+ 
 <!-- MODAL BACKUP -->
 <div class="overlay" id="ov-bk" onclick="ovClose(event,'ov-bk')">
   <div class="modal">
@@ -472,7 +472,7 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size
     <div class="mfoot" style="padding-top:0"><button class="bcancel" style="flex:1" onclick="closeOv('ov-bk')">Fechar</button></div>
   </div>
 </div>
-
+ 
 <!-- MODAL RELATÓRIO -->
 <div class="overlay" id="ov-rel" onclick="ovClose(event,'ov-rel')">
   <div class="modal">
@@ -491,7 +491,7 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size
     <div class="mfoot"><button class="bcancel" onclick="closeOv('ov-rel')">Cancelar</button><button class="bsave" onclick="gerarRelatorio()">&#128196; Gerar</button></div>
   </div>
 </div>
-
+ 
 <!-- PDF VIEWER -->
 <div class="pdf-viewer" id="pdf-viewer">
   <div class="pdf-vbar" id="pdf-vbar">
@@ -506,7 +506,7 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size
     <div id="pa-btns"></div>
   </div>
 </div>
-
+ 
 <script>
 var entries  = JSON.parse(localStorage.getItem('uv5_ent') || '[]');
 var clinicas = JSON.parse(localStorage.getItem('uv5_cl')  || '[]');
@@ -518,18 +518,18 @@ var clinicas = JSON.parse(localStorage.getItem('uv5_cl')  || '[]');
   });
   if(!clinicas.length){var v=localStorage.getItem('uv4_clinicas');if(v){try{clinicas=JSON.parse(v);save();}catch(e){}}}
 })();
-
+ 
 var editId=null,editClId=null,fmode='all',_imp=null,_pdfData=null,_pdfName=null,_relSel={};
 var selY=new Date().getFullYear(),selM=new Date().getMonth();
 var MS=['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
 var _viewerEntry=null;
-
+ 
 // Detecta iOS — Safari não consegue exibir blob PDF em iframe nem window.open
 var isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
-
+ 
 document.getElementById('f-data').value=new Date().toISOString().slice(0,10);
 all();
-
+ 
 function all(){updM();dash();renderL();renderPend();renderCl();}
 function updM(){gt('mname',MS[selM]);gt('yval',selY);gt('ano-lbl',selY);gt('res-ano',selY);}
 function prevMonth(){selM--;if(selM<0){selM=11;selY--;}all();}
@@ -541,7 +541,7 @@ function ds(){var n=new Date();return n.getFullYear()+'-'+pad(n.getMonth()+1)+'-
 function pad(x){return String(x).padStart(2,'0');}
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function esc2(s){return String(s||'').replace(/\\/g,'\\\\').replace(/'/g,"\\'")}
-
+ 
 // ── converte dataURI base64 → Blob PDF ──
 function b64toBlob(dataURI){
   var b64=dataURI.split(',')[1];
@@ -550,7 +550,7 @@ function b64toBlob(dataURI){
   for(var i=0;i<bin.length;i++) arr[i]=bin.charCodeAt(i);
   return new Blob([arr],{type:'application/pdf'});
 }
-
+ 
 // ── abre/baixa PDF: cria <a> invisível e clica de forma síncrona ──
 // Funciona em iOS Safari, Android Chrome e Desktop
 // DEVE ser chamado diretamente de um handler de click do usuário (síncrono)
@@ -565,7 +565,7 @@ function pdfOpenOrDownload(dataURI, filename){
   a.click();
   document.body.removeChild(a);
 }
-
+ 
 // ── compartilha PDF via Web Share API (única forma de passar arquivo para outro app) ──
 // No iOS abre o share sheet com WhatsApp, Mail, AirDrop, etc.
 // No Android abre o menu de compartilhamento do sistema
@@ -584,7 +584,7 @@ function pdfShare(dataURI, filename){
     pdfOpenOrDownload(dataURI, filename);
   }
 }
-
+ 
 // ── download cross-platform ──
 // iOS Safari ignora blob URL em <a download> — converte para data URI
 function triggerDownload(blob, filename){
@@ -608,7 +608,7 @@ function triggerDownload(blob, filename){
     setTimeout(function(){URL.revokeObjectURL(url);},30000);
   }
 }
-
+ 
 // ── abre PDF: desktop = nova aba, iOS = data URI na aba atual ──
 // Funções chamadas pelos botões — DEVEM ser síncronas ao click do usuário
 function pdfAbrir(){
@@ -619,14 +619,14 @@ function pdfCompartilharAcao(){
   if(!_viewerEntry) return;
   pdfShare(_viewerEntry.pdfData, _viewerEntry.pdfName||'exame.pdf');
 }
-
+ 
 // ── PDF VIEWER ──
 function openPdfViewer(id){
   var e=entries.find(function(x){return x.id===id;});
   if(!e||!e.pdfData){showToast('Nenhum PDF anexado','var(--amber)');return;}
   _viewerEntry=e;
   var fname=e.pdfName||'PDF';
-
+ 
   // Reconstrói topbar
   var vbar=g('pdf-vbar');
   var titleEl=g('pdf-vtitle');
@@ -638,32 +638,32 @@ function openPdfViewer(id){
   bcl.innerHTML='&#10005;';
   bcl.onclick=closePdfViewer;
   vbar.appendChild(bcl);
-
+ 
   // Sempre usa a tela de ações — mais confiável que iframe em mobile
   g('pdf-iframe').style.display='none';
   var actScr=g('pdf-actions-screen');
   actScr.classList.add('show');
   gt('pa-fname',fname);
-
+ 
   // Detecta suporte a Web Share com arquivo
   var testBlob=b64toBlob(e.pdfData);
   var testFile=new File([testBlob],fname,{type:'application/pdf'});
   var hasShare=!!(navigator.share&&navigator.canShare&&navigator.canShare({files:[testFile]}));
-
+ 
   var hint=hasShare
     ? 'Abra o PDF no dispositivo ou compartilhe direto pelo WhatsApp, e-mail, AirDrop e outros.'
     : 'Abra o PDF no dispositivo. Para compartilhar, abra e use o botão nativo do seu browser.';
   gt('pa-hint',hint);
-
+ 
   var html='<button class="pa-btn pa-open" onclick="pdfAbrir()">&#128196; Abrir / Baixar PDF</button>';
   if(hasShare){
     html+='<button class="pa-btn pa-share" onclick="pdfCompartilharAcao()">&#128257; Compartilhar (WhatsApp, e-mail...)</button>';
   }
   g('pa-btns').innerHTML=html;
-
+ 
   g('pdf-viewer').classList.add('open');
 }
-
+ 
 function closePdfViewer(){
   g('pdf-viewer').classList.remove('open');
   _viewerEntry=null;
@@ -676,7 +676,7 @@ function closePdfViewer(){
     g('pdf-actions-screen').classList.remove('show');
   },350);
 }
-
+ 
 function dash(){
   var mE=entries.filter(function(e){if(!e.data)return false;var d=new Date(e.data+'T12:00:00');return d.getMonth()===selM&&d.getFullYear()===selY;});
   var fat=mE.reduce(function(s,e){return s+Number(e.valor||0);},0);
@@ -708,7 +708,7 @@ function dash(){
   var rb=g('res-body');
   rb.innerHTML=rows?rows+'<tr style="background:rgba(0,212,200,.04)"><td><strong>Total</strong></td><td class="nc"><strong>'+tQ+'</strong></td><td><strong>'+fmt(tF)+'</strong></td><td class="ng"><strong>'+fmt(tR)+'</strong></td></tr>':'<tr class="erow"><td colspan="4">Sem dados em '+selY+'</td></tr>';
 }
-
+ 
 function setF(f){fmode=f;['all','rec','pend'].forEach(function(x){g('ch-'+x).classList.toggle('on',x===f);});renderL();}
 function renderL(){
   var s=(g('srch')?g('srch').value:'').toLowerCase();
@@ -738,7 +738,7 @@ function renderL(){
       +'</div></div></div>';
   }).join('');
 }
-
+ 
 function renderPend(){
   var pend=entries.filter(function(e){return !e.recebido;});
   var tot=pend.reduce(function(s,e){return s+Number(e.valor||0);},0);
@@ -761,7 +761,7 @@ function renderPend(){
   }).join('');
 }
 function togPc(id){var el=g(id);if(el)el.style.display=el.style.display==='none'?'block':'none';}
-
+ 
 function openRelatorio(){
   var pend=entries.filter(function(e){return !e.recebido;});
   var byC={};pend.forEach(function(e){var k=(e.clinica||'Sem Clínica').trim();if(!byC[k])byC[k]=[];byC[k].push(e);});
@@ -796,20 +796,120 @@ function gerarRelatorio(){
   var pend=entries.filter(function(e){return !e.recebido;});
   var byC={};pend.forEach(function(e){var k=(e.clinica||'Sem Clínica').trim();if(!byC[k])byC[k]=[];byC[k].push(e);});
   var totalG=0;
-  var secs=sel.map(function(c){
-    var items=(byC[c]||[]).slice().sort(function(a,b){return b.data.localeCompare(a.data);});
+  var secs=sel.map(function(cl){
+    var items=(byC[cl]||[]).slice().sort(function(a,b){return b.data.localeCompare(a.data);});
     var ctot=items.reduce(function(s,e){return s+Number(e.valor||0);},0);totalG+=ctot;
-    var rows=items.map(function(e){return'<tr><td>'+fmtDL(e.data)+'</td><td>'+esc(e.animal||'—')+(e.especie?' ('+esc(e.especie)+')':'')+'</td><td>'+esc(e.proprietario||'—')+'</td><td>'+esc(e.obs||'—')+'</td><td style="text-align:right;font-weight:700;color:#e67e00">'+fmt(Number(e.valor||0))+'</td></tr>';}).join('');
-    return'<div style="background:#fff;border-radius:10px;margin-bottom:20px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08)"><div style="background:#1a2a3a;color:#fff;padding:13px 18px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:16px;font-weight:700">'+esc(c)+'</span><span style="color:#00d4c8;font-weight:700;font-size:15px">'+fmt(ctot)+' | '+items.length+' exame'+(items.length!==1?'s':'')+'</span></div><table style="width:100%;border-collapse:collapse"><thead><tr style="background:#f8f9fc"><th style="padding:9px 16px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;color:#888;border-bottom:1px solid #e8eaf0">Data</th><th style="padding:9px 16px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;color:#888;border-bottom:1px solid #e8eaf0">Animal</th><th style="padding:9px 16px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;color:#888;border-bottom:1px solid #e8eaf0">Proprietário</th><th style="padding:9px 16px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;color:#888;border-bottom:1px solid #e8eaf0">Obs.</th><th style="padding:9px 16px;text-align:right;font-size:11px;font-weight:700;text-transform:uppercase;color:#888;border-bottom:1px solid #e8eaf0">Valor</th></tr></thead><tbody>'+rows+'</tbody><tfoot><tr><td colspan="4" style="padding:10px 16px;text-align:right;font-weight:700;background:#fffbf0;font-size:14px">Subtotal '+esc(c)+':</td><td style="padding:10px 16px;text-align:right;font-weight:800;color:#e67e00;background:#fffbf0;font-size:15px">'+fmt(ctot)+'</td></tr></tfoot></table></div>';
+    /* cada exame vira um card responsivo */
+    var cards=items.map(function(e){
+      return '<div class="eitem">'
+        +'<div class="eitem-top">'
+          +'<div class="eitem-animal">'+esc(e.animal||'—')+(e.especie?' <span class="etag">('+esc(e.especie)+')</span>':'')+'</div>'
+          +'<div class="eitem-val">'+fmt(Number(e.valor||0))+'</div>'
+        +'</div>'
+        +'<div class="eitem-meta">'
+          +'<span class="emchip">'+fmtDL(e.data)+'</span>'
+          +(e.proprietario?'<span class="emchip">'+esc(e.proprietario)+'</span>':'')
+          +(e.obs&&e.obs!=='—'?'<span class="emchip emobs">'+esc(e.obs)+'</span>':'')
+        +'</div>'
+        +'</div>';
+    }).join('');
+    return '<div class="cl-block">'
+      +'<div class="cl-hdr">'
+        +'<div class="cl-name">'+esc(cl)+'</div>'
+        +'<div class="cl-resume"><span class="cl-val">'+fmt(ctot)+'</span><span class="cl-qtd">'+items.length+' exame'+(items.length!==1?'s':'')+'</span></div>'
+      +'</div>'
+      +'<div class="cl-items">'+cards+'</div>'
+      +'<div class="cl-sub">Subtotal: <strong>'+fmt(ctot)+'</strong></div>'
+      +'</div>';
   }).join('');
   var agora=new Date().toLocaleDateString('pt-BR')+' '+new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
-  var totalEx=sel.reduce(function(s,c){return s+(byC[c]?byC[c].length:0);},0);
-  var html='<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Relatório Pendências — APB UltraVet</title><style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:Segoe UI,Arial,sans-serif;background:#f4f6fa;color:#222;padding:24px;font-size:14px}.hdr{background:linear-gradient(135deg,#1a2a3a,#0d1e2e);color:#fff;border-radius:12px;padding:22px 26px;margin-bottom:22px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}.htitle{font-size:24px;font-weight:800;letter-spacing:1px}.htitle span{color:#00d4c8}.hsub{font-size:13px;opacity:.6;margin-top:4px}.hdate{font-size:12px;opacity:.45;text-align:right}.sum{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}.sc{background:#fff;border-radius:10px;padding:15px 18px;box-shadow:0 2px 8px rgba(0,0,0,.06)}.scl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#888;margin-bottom:6px}.scv{font-size:20px;font-weight:800}.amber{color:#e67e00}.blue{color:#2563eb}.total-box{background:#1a2a3a;color:#fff;border-radius:10px;padding:16px 20px;text-align:right;font-size:17px;font-weight:800;margin-top:8px}.total-box span{color:#00d4c8}.ftr{text-align:center;margin-top:22px;font-size:11px;color:#aaa}td{padding:10px 16px;border-bottom:1px solid #f0f2f8;font-size:13px}tr:last-child td{border-bottom:none}@media print{body{background:#fff;padding:10px}button{display:none}}</style><script>function imprimir(){window.print()}<\/script></head><body><div class="hdr"><div><div class="htitle">APB <span>UltraVet</span></div><div class="hsub">Relatório de Pendências por Clínica</div></div><div class="hdate">Gerado em: '+agora+'<br><button onclick="imprimir()" style="margin-top:8px;background:#00d4c8;color:#0a1018;border:none;padding:6px 14px;border-radius:6px;font-weight:700;cursor:pointer;font-size:13px">&#128438; Imprimir</button></div></div><div class="sum"><div class="sc"><div class="scl">Total Pendente</div><div class="scv amber">'+fmt(totalG)+'</div></div><div class="sc"><div class="scl">Clínicas</div><div class="scv blue">'+sel.length+'</div></div><div class="sc"><div class="scl">Exames</div><div class="scv blue">'+totalEx+'</div></div></div>'+secs+'<div class="total-box">Total Geral Pendente: <span>'+fmt(totalG)+'</span></div><div class="ftr">APB UltraVet — Relatório gerado em '+agora+'</div></body></html>';
+  var totalEx=sel.reduce(function(s,cl){return s+(byC[cl]?byC[cl].length:0);},0);
+  var html='<!DOCTYPE html><html lang="pt-BR"><head>'
+    +'<meta charset="UTF-8">'
+    +'<meta name="viewport" content="width=device-width,initial-scale=1">'
+    +'<title>Relatório Pendências — APB UltraVet</title>'
+    +'<style>'
+      +'*{box-sizing:border-box;margin:0;padding:0}'
+      +'body{font-family:-apple-system,Segoe UI,Arial,sans-serif;background:#f0f2f7;color:#1a1a2e;font-size:14px;padding:16px}'
+      /* ─ HEADER ─ */
+      +'.hdr{background:linear-gradient(135deg,#1a2a3a,#0d1e2e);color:#fff;border-radius:14px;padding:18px 20px;margin-bottom:16px}'
+      +'.htitle{font-size:22px;font-weight:800;letter-spacing:1px}'
+      +'.htitle span{color:#00d4c8}'
+      +'.hsub{font-size:12px;opacity:.55;margin-top:3px}'
+      +'.hdate{font-size:11px;opacity:.4;margin-top:6px}'
+      +'.hbtn{display:inline-block;margin-top:10px;background:#00d4c8;color:#0a1018;border:none;padding:8px 16px;border-radius:8px;font-weight:700;cursor:pointer;font-size:13px;text-decoration:none}'
+      /* ─ RESUMO ─ */
+      +'.sum{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}'
+      +'.sc{background:#fff;border-radius:10px;padding:12px 14px;box-shadow:0 1px 4px rgba(0,0,0,.08)}'
+      +'.scl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:#888;margin-bottom:4px}'
+      +'.scv{font-size:18px;font-weight:800}'
+      +'.amber{color:#e67e00}.blue{color:#2563eb}'
+      /* ─ CLÍNICA BLOCK ─ */
+      +'.cl-block{background:#fff;border-radius:12px;margin-bottom:14px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.08)}'
+      +'.cl-hdr{background:#1a2a3a;color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}'
+      +'.cl-name{font-size:15px;font-weight:700;flex:1;min-width:0;word-break:break-word}'
+      +'.cl-resume{text-align:right;flex-shrink:0}'
+      +'.cl-val{display:block;font-size:16px;font-weight:800;color:#00d4c8}'
+      +'.cl-qtd{font-size:11px;opacity:.55}'
+      +'.cl-items{padding:6px 0}'
+      /* ─ ITEM CARD ─ */
+      +'.eitem{padding:11px 16px;border-bottom:1px solid #f0f2f8}'
+      +'.eitem:last-child{border-bottom:none}'
+      +'.eitem-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:5px}'
+      +'.eitem-animal{font-size:14px;font-weight:700;color:#1a1a2e;flex:1;min-width:0;word-break:break-word}'
+      +'.etag{font-size:11px;font-weight:400;color:#888}'
+      +'.eitem-val{font-size:16px;font-weight:800;color:#e67e00;white-space:nowrap;flex-shrink:0}'
+      +'.eitem-meta{display:flex;flex-wrap:wrap;gap:5px}'
+      +'.emchip{font-size:11px;background:#f0f2f7;color:#555;padding:3px 8px;border-radius:20px;white-space:nowrap}'
+      +'.emobs{color:#888;font-style:italic}'
+      /* ─ SUBTOTAL ─ */
+      +'.cl-sub{padding:10px 16px;text-align:right;font-size:13px;color:#888;background:#fafbfd;border-top:1px solid #f0f2f8}'
+      +'.cl-sub strong{color:#e67e00;font-size:15px;margin-left:4px}'
+      /* ─ TOTAL GERAL ─ */
+      +'.total-box{background:#1a2a3a;color:#fff;border-radius:12px;padding:16px 18px;text-align:center;font-size:15px;font-weight:700;margin-top:4px}'
+      +'.total-box span{color:#00d4c8;font-size:22px;font-weight:800;display:block;margin-top:4px}'
+      +'.ftr{text-align:center;margin-top:16px;font-size:11px;color:#aaa;padding-bottom:8px}'
+      /* ─ PRINT ─ */
+      +'@media print{'
+        +'body{background:#fff;padding:8px;font-size:13px}'
+        +'.hbtn{display:none}'
+        +'.cl-block{box-shadow:none;border:1px solid #e0e0e0;break-inside:avoid}'
+        +'.cl-hdr{-webkit-print-color-adjust:exact;print-color-adjust:exact}'
+        +'.total-box{-webkit-print-color-adjust:exact;print-color-adjust:exact}'
+        +'.eitem-val{color:#c05e00!important}'
+      +'}'
+      /* ─ MOBILE ─ */
+      +'@media(max-width:480px){'
+        +'body{padding:10px}'
+        +'.sum{grid-template-columns:1fr 1fr}'
+        +'.sum .sc:last-child{grid-column:1/-1}'
+        +'.htitle{font-size:19px}'
+        +'.scv{font-size:16px}'
+      +'}'
+    +'</style>'
+    +'<script>function imprimir(){window.print()}<\/script>'
+    +'</head><body>'
+    +'<div class="hdr">'
+      +'<div class="htitle">APB <span>UltraVet</span></div>'
+      +'<div class="hsub">Relatório de Pendências por Clínica</div>'
+      +'<div class="hdate">Gerado em: '+agora+'</div>'
+      +'<button class="hbtn" onclick="imprimir()">&#128438; Imprimir</button>'
+    +'</div>'
+    +'<div class="sum">'
+      +'<div class="sc"><div class="scl">Total Pendente</div><div class="scv amber">'+fmt(totalG)+'</div></div>'
+      +'<div class="sc"><div class="scl">Clínicas</div><div class="scv blue">'+sel.length+'</div></div>'
+      +'<div class="sc"><div class="scl">Exames</div><div class="scv blue">'+totalEx+'</div></div>'
+    +'</div>'
+    +secs
+    +'<div class="total-box">Total Geral Pendente<span>'+fmt(totalG)+'</span></div>'
+    +'<div class="ftr">APB UltraVet — Relatório gerado em '+agora+'</div>'
+    +'</body></html>';
   closeOv('ov-rel');
   var blob=new Blob([html],{type:'text/html;charset=utf-8'});
   triggerDownload(blob,'pendencias-apbultravet-'+ds()+'.html');
 }
-
+ 
+ 
 function renderCl(){
   var s=(g('cl-srch')?g('cl-srch').value:'').toLowerCase();
   var list=clinicas.slice().sort(function(a,b){return a.nome.localeCompare(b.nome);});
@@ -950,7 +1050,7 @@ function cancelImport(){
   g('bk-file').value='';
 }
 function save(){localStorage.setItem('uv5_ent',JSON.stringify(entries));localStorage.setItem('uv5_cl',JSON.stringify(clinicas));}
-
+ 
 // ── Event delegation na lista de lançamentos (evita onclick inline com aspas — problemático no iOS) ──
 document.addEventListener('click',function(ev){
   var btn=ev.target.closest('[data-act]');
@@ -962,7 +1062,7 @@ document.addEventListener('click',function(ev){
   else if(act==='del'){delE(id);}
   else if(act==='pdf'){openPdfViewer(id);}
 });
-
+ 
 // ── Sistema de toast (substitui alert) ──
 var _toastTimer=null;
 function showToast(msg, color){
@@ -980,7 +1080,7 @@ function showToast(msg, color){
     t.style.transform='translateX(-50%) translateY(20px)';
   },2800);
 }
-
+ 
 // ── Confirmação inline (substitui confirm() — bloqueado em alguns contextos iOS) ──
 var _confirmCb=null;
 function showConfirm(msg, ico, btnColor, cb){
@@ -1019,7 +1119,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeOv('ov
 </script>
 <!-- TOAST FEEDBACK -->
 <div id="toast" style="position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--green);color:#0a1018;padding:12px 22px;border-radius:12px;font-family:var(--fh);font-size:15px;font-weight:700;z-index:9999;white-space:nowrap;box-shadow:0 4px 20px rgba(0,230,118,.4);opacity:0;transition:opacity .2s,transform .2s;pointer-events:none"></div>
-
+ 
 <!-- MODAL DE CONFIRMAÇÃO INLINE (substitui confirm() no iOS) -->
 <div id="ov-confirm" style="position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:500;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;visibility:hidden;transition:opacity .2s;backdrop-filter:blur(4px)">
   <div style="background:#1a1e2a;border:1px solid var(--border2);border-radius:18px;padding:24px;width:100%;max-width:320px;text-align:center">
@@ -1033,3 +1133,4 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeOv('ov
 </div>
 </body>
 </html>
+ 
