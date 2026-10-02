@@ -116,7 +116,7 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size
 .pdf-badge{display:inline-flex;align-items:center;gap:5px;padding:6px 13px;border-radius:20px;font-size:13px;font-weight:700;cursor:pointer;border:1px solid;transition:all .15s;user-select:none;white-space:nowrap;flex-shrink:0}
 .pdf-badge:active{opacity:.7}
 .pdf-badge.view{background:rgba(0,212,200,.1);border-color:rgba(0,212,200,.3);color:var(--cyan)}
- 
+
 .eright{text-align:right;flex-shrink:0;min-width:80px}
 .eval{font-family:var(--fh);font-size:19px;font-weight:700;color:var(--cyan);white-space:nowrap}
 .eacts{display:flex;gap:6px;margin-top:8px;justify-content:flex-end}
@@ -191,7 +191,7 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size
 .pdf-att{display:flex;align-items:center;gap:10px;background:rgba(0,212,200,.08);border:1px solid rgba(0,212,200,.25);border-radius:10px;padding:11px 13px;margin-top:8px}
 .pdf-att-name{font-size:14px;color:var(--cyan);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pdf-rm{background:none;border:none;color:var(--red);font-size:18px;cursor:pointer;flex-shrink:0;padding:0 4px}
- 
+
 /* ─── PDF VIEWER ─── */
 .pdf-viewer{position:fixed;inset:0;background:#0a0c12;z-index:300;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .2s}
 .pdf-viewer.open{opacity:1;visibility:visible}
@@ -201,7 +201,7 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size
 .pvbtn:active{opacity:.65}
 .pvbtn.close-btn{background:var(--card2);border-color:var(--border2);color:var(--muted);padding:0;width:36px}
 .pdf-iframe{flex:1;width:100%;border:none;background:#fff}
- 
+
 /* Tela de compartilhamento (sempre visível no iOS, botão no desktop) */
 .pdf-actions-screen{flex:1;display:none;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;gap:0;overflow-y:auto}
 .pdf-actions-screen.show{display:flex}
@@ -219,7 +219,7 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size
 .pa-em{background:linear-gradient(135deg,var(--blue),#2255cc);color:#fff}
 .pa-sep{width:100%;max-width:320px;display:flex;align-items:center;gap:10px;color:var(--dim);font-size:13px;margin:4px 0 10px}
 .pa-sep::before,.pa-sep::after{content:'';flex:1;height:1px;background:var(--border2)}
- 
+
 .bk-section{margin-bottom:4px}
 .bk-title{font-family:var(--fh);font-size:17px;font-weight:700;margin-bottom:6px}
 .bk-desc{font-size:14px;color:var(--muted);line-height:1.5}
@@ -377,7 +377,7 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size
     </nav>
   </div>
 </div>
- 
+
 <!-- MODAL EXAME -->
 <div class="overlay" id="ov-exame" onclick="ovClose(event,'ov-exame')">
   <div class="modal">
@@ -421,7 +421,7 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size
     <div class="mfoot"><button class="bcancel" onclick="closeOv('ov-exame')">Cancelar</button><button class="bsave" onclick="saveEntry()">Salvar Exame</button></div>
   </div>
 </div>
- 
+
 <!-- MODAL CLÍNICA -->
 <div class="overlay" id="ov-cl" onclick="ovClose(event,'ov-cl')">
   <div class="modal">
@@ -437,7 +437,7 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size
     <div class="mfoot"><button class="bcancel" onclick="closeOv('ov-cl')">Cancelar</button><button class="bsave" onclick="saveCl()">Salvar Clínica</button></div>
   </div>
 </div>
- 
+
 <!-- MODAL BACKUP -->
 <div class="overlay" id="ov-bk" onclick="ovClose(event,'ov-bk')">
   <div class="modal">
@@ -472,7 +472,7 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size
     <div class="mfoot" style="padding-top:0"><button class="bcancel" style="flex:1" onclick="closeOv('ov-bk')">Fechar</button></div>
   </div>
 </div>
- 
+
 <!-- MODAL RELATÓRIO -->
 <div class="overlay" id="ov-rel" onclick="ovClose(event,'ov-rel')">
   <div class="modal">
@@ -491,7 +491,7 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size
     <div class="mfoot"><button class="bcancel" onclick="closeOv('ov-rel')">Cancelar</button><button class="bsave" onclick="gerarRelatorio()">&#128196; Gerar</button></div>
   </div>
 </div>
- 
+
 <!-- PDF VIEWER -->
 <div class="pdf-viewer" id="pdf-viewer">
   <div class="pdf-vbar" id="pdf-vbar">
@@ -506,7 +506,7 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size
     <div id="pa-btns"></div>
   </div>
 </div>
- 
+
 <script>
 var entries  = JSON.parse(localStorage.getItem('uv5_ent') || '[]');
 var clinicas = JSON.parse(localStorage.getItem('uv5_cl')  || '[]');
@@ -518,18 +518,18 @@ var clinicas = JSON.parse(localStorage.getItem('uv5_cl')  || '[]');
   });
   if(!clinicas.length){var v=localStorage.getItem('uv4_clinicas');if(v){try{clinicas=JSON.parse(v);save();}catch(e){}}}
 })();
- 
+
 var editId=null,editClId=null,fmode='all',_imp=null,_pdfData=null,_pdfName=null,_relSel={};
 var selY=new Date().getFullYear(),selM=new Date().getMonth();
 var MS=['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
 var _viewerEntry=null;
- 
+
 // Detecta iOS — Safari não consegue exibir blob PDF em iframe nem window.open
 var isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
- 
+
 document.getElementById('f-data').value=new Date().toISOString().slice(0,10);
 all();
- 
+
 function all(){updM();dash();renderL();renderPend();renderCl();}
 function updM(){gt('mname',MS[selM]);gt('yval',selY);gt('ano-lbl',selY);gt('res-ano',selY);}
 function prevMonth(){selM--;if(selM<0){selM=11;selY--;}all();}
@@ -541,7 +541,7 @@ function ds(){var n=new Date();return n.getFullYear()+'-'+pad(n.getMonth()+1)+'-
 function pad(x){return String(x).padStart(2,'0');}
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function esc2(s){return String(s||'').replace(/\\/g,'\\\\').replace(/'/g,"\\'")}
- 
+
 // ── converte dataURI base64 → Blob PDF ──
 function b64toBlob(dataURI){
   var b64=dataURI.split(',')[1];
@@ -550,7 +550,7 @@ function b64toBlob(dataURI){
   for(var i=0;i<bin.length;i++) arr[i]=bin.charCodeAt(i);
   return new Blob([arr],{type:'application/pdf'});
 }
- 
+
 // ── abre/baixa PDF: cria <a> invisível e clica de forma síncrona ──
 // Funciona em iOS Safari, Android Chrome e Desktop
 // DEVE ser chamado diretamente de um handler de click do usuário (síncrono)
@@ -565,7 +565,7 @@ function pdfOpenOrDownload(dataURI, filename){
   a.click();
   document.body.removeChild(a);
 }
- 
+
 // ── compartilha PDF via Web Share API (única forma de passar arquivo para outro app) ──
 // No iOS abre o share sheet com WhatsApp, Mail, AirDrop, etc.
 // No Android abre o menu de compartilhamento do sistema
@@ -584,31 +584,18 @@ function pdfShare(dataURI, filename){
     pdfOpenOrDownload(dataURI, filename);
   }
 }
- 
+
 // ── download cross-platform ──
 // iOS Safari ignora blob URL em <a download> — converte para data URI
 function triggerDownload(blob, filename){
-  if(isIOS){
-    var reader=new FileReader();
-    reader.onloadend=function(){
-      var a=document.createElement('a');
-      a.href=reader.result;
-      a.download=filename;
-      a.style.display='none';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    };
-    reader.readAsDataURL(blob);
-  } else {
-    var url=URL.createObjectURL(blob);
-    var a=document.createElement('a');
-    a.href=url; a.download=filename; a.style.display='none';
-    document.body.appendChild(a); a.click(); document.body.removeChild(a);
-    setTimeout(function(){URL.revokeObjectURL(url);},30000);
-  }
+  // Usado apenas em desktop/Android — iOS usa window.open diretamente
+  var url=URL.createObjectURL(blob);
+  var a=document.createElement('a');
+  a.href=url; a.download=filename; a.style.display='none';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(function(){URL.revokeObjectURL(url);},30000);
 }
- 
+
 // ── abre PDF: desktop = nova aba, iOS = data URI na aba atual ──
 // Funções chamadas pelos botões — DEVEM ser síncronas ao click do usuário
 function pdfAbrir(){
@@ -619,14 +606,14 @@ function pdfCompartilharAcao(){
   if(!_viewerEntry) return;
   pdfShare(_viewerEntry.pdfData, _viewerEntry.pdfName||'exame.pdf');
 }
- 
+
 // ── PDF VIEWER ──
 function openPdfViewer(id){
   var e=entries.find(function(x){return x.id===id;});
   if(!e||!e.pdfData){showToast('Nenhum PDF anexado','var(--amber)');return;}
   _viewerEntry=e;
   var fname=e.pdfName||'PDF';
- 
+
   // Reconstrói topbar
   var vbar=g('pdf-vbar');
   var titleEl=g('pdf-vtitle');
@@ -638,32 +625,32 @@ function openPdfViewer(id){
   bcl.innerHTML='&#10005;';
   bcl.onclick=closePdfViewer;
   vbar.appendChild(bcl);
- 
+
   // Sempre usa a tela de ações — mais confiável que iframe em mobile
   g('pdf-iframe').style.display='none';
   var actScr=g('pdf-actions-screen');
   actScr.classList.add('show');
   gt('pa-fname',fname);
- 
+
   // Detecta suporte a Web Share com arquivo
   var testBlob=b64toBlob(e.pdfData);
   var testFile=new File([testBlob],fname,{type:'application/pdf'});
   var hasShare=!!(navigator.share&&navigator.canShare&&navigator.canShare({files:[testFile]}));
- 
+
   var hint=hasShare
     ? 'Abra o PDF no dispositivo ou compartilhe direto pelo WhatsApp, e-mail, AirDrop e outros.'
     : 'Abra o PDF no dispositivo. Para compartilhar, abra e use o botão nativo do seu browser.';
   gt('pa-hint',hint);
- 
+
   var html='<button class="pa-btn pa-open" onclick="pdfAbrir()">&#128196; Abrir / Baixar PDF</button>';
   if(hasShare){
     html+='<button class="pa-btn pa-share" onclick="pdfCompartilharAcao()">&#128257; Compartilhar (WhatsApp, e-mail...)</button>';
   }
   g('pa-btns').innerHTML=html;
- 
+
   g('pdf-viewer').classList.add('open');
 }
- 
+
 function closePdfViewer(){
   g('pdf-viewer').classList.remove('open');
   _viewerEntry=null;
@@ -676,7 +663,7 @@ function closePdfViewer(){
     g('pdf-actions-screen').classList.remove('show');
   },350);
 }
- 
+
 function dash(){
   var mE=entries.filter(function(e){if(!e.data)return false;var d=new Date(e.data+'T12:00:00');return d.getMonth()===selM&&d.getFullYear()===selY;});
   var fat=mE.reduce(function(s,e){return s+Number(e.valor||0);},0);
@@ -708,7 +695,7 @@ function dash(){
   var rb=g('res-body');
   rb.innerHTML=rows?rows+'<tr style="background:rgba(0,212,200,.04)"><td><strong>Total</strong></td><td class="nc"><strong>'+tQ+'</strong></td><td><strong>'+fmt(tF)+'</strong></td><td class="ng"><strong>'+fmt(tR)+'</strong></td></tr>':'<tr class="erow"><td colspan="4">Sem dados em '+selY+'</td></tr>';
 }
- 
+
 function setF(f){fmode=f;['all','rec','pend'].forEach(function(x){g('ch-'+x).classList.toggle('on',x===f);});renderL();}
 function renderL(){
   var s=(g('srch')?g('srch').value:'').toLowerCase();
@@ -738,7 +725,7 @@ function renderL(){
       +'</div></div></div>';
   }).join('');
 }
- 
+
 function renderPend(){
   var pend=entries.filter(function(e){return !e.recebido;});
   var tot=pend.reduce(function(s,e){return s+Number(e.valor||0);},0);
@@ -761,7 +748,7 @@ function renderPend(){
   }).join('');
 }
 function togPc(id){var el=g(id);if(el)el.style.display=el.style.display==='none'?'block':'none';}
- 
+
 function openRelatorio(){
   var pend=entries.filter(function(e){return !e.recebido;});
   var byC={};pend.forEach(function(e){var k=(e.clinica||'Sem Clínica').trim();if(!byC[k])byC[k]=[];byC[k].push(e);});
@@ -905,11 +892,18 @@ function gerarRelatorio(){
     +'<div class="ftr">APB UltraVet — Relatório gerado em '+agora+'</div>'
     +'</body></html>';
   closeOv('ov-rel');
-  var blob=new Blob([html],{type:'text/html;charset=utf-8'});
-  triggerDownload(blob,'pendencias-apbultravet-'+ds()+'.html');
+  if(isIOS){
+    // iOS: abre diretamente numa nova aba (síncrono dentro do click — Safari permite)
+    var win=window.open('','_blank');
+    if(win){win.document.write(html);win.document.close();}
+    else{showToast('Permita pop-ups para ver o relatório','var(--amber)');}
+  } else {
+    var blob=new Blob([html],{type:'text/html;charset=utf-8'});
+    triggerDownload(blob,'pendencias-apbultravet-'+ds()+'.html');
+  }
 }
- 
- 
+
+
 function renderCl(){
   var s=(g('cl-srch')?g('cl-srch').value:'').toLowerCase();
   var list=clinicas.slice().sort(function(a,b){return a.nome.localeCompare(b.nome);});
@@ -982,8 +976,35 @@ function showPdfAtt(name){g('pdf-att').style.display='flex';gt('pdf-name',name);
 function removePdf(){_pdfData=null;_pdfName=null;g('pdf-att').style.display='none';gt('pdf-lbl-txt','Selecionar arquivo PDF');if(g('f-pdf'))g('f-pdf').value='';}
 function exportJSON(){
   var data={version:2,app:'APB UltraVet',exported:new Date().toISOString(),entries:entries,clinicas:clinicas};
-  var blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json;charset=utf-8'});
-  triggerDownload(blob,'backup-apbultravet-'+ds()+'.json');
+  var json=JSON.stringify(data,null,2);
+  if(isIOS){
+    // iOS: abre nova aba com o JSON e botão para copiar/compartilhar
+    var esc_json=json.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    var pg='<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+      +'<title>Backup APB UltraVet</title>'
+      +'<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,sans-serif;background:#111;color:#e0e0e0;padding:16px}'
+      +'.bar{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}'
+      +'.btn{padding:10px 18px;border-radius:10px;border:none;font-size:15px;font-weight:700;cursor:pointer}'
+      +'.dl{background:#00d4c8;color:#0a1018}.cp{background:#2e3448;color:#e0e0e0}'
+      +'pre{background:#1a1e2a;border:1px solid #2e3448;border-radius:10px;padding:14px;font-size:11px;white-space:pre-wrap;word-break:break-all;overflow:auto;max-height:70vh}'
+      +'</style></head><body>'
+      +'<div class="bar">'
+      +'<button class="btn dl" onclick="dl()">&#11015; Salvar JSON</button>'
+      +'<button class="btn cp" onclick="cp()">&#128203; Copiar</button>'
+      +'</div>'
+      +'<pre id="j">'+esc_json+'</pre>'
+      +'<script>'
+      +'var raw='+json+';'
+      +'function dl(){var b=new Blob([JSON.stringify(raw,null,2)],{type:"application/json"});var u=URL.createObjectURL(b);var a=document.createElement("a");a.href=u;a.download="backup-apbultravet.json";a.click();}'
+      +'function cp(){navigator.clipboard?navigator.clipboard.writeText(JSON.stringify(raw,null,2)).then(function(){alert("Copiado!")}):alert("Selecione e copie o texto acima");}'
+      +'<\/script></body></html>';
+    var win=window.open('','_blank');
+    if(win){win.document.write(pg);win.document.close();}
+    else{showToast('Permita pop-ups para exportar o backup','var(--amber)');}
+  } else {
+    var blob=new Blob([json],{type:'application/json;charset=utf-8'});
+    triggerDownload(blob,'backup-apbultravet-'+ds()+'.json');
+  }
 }
 function onFileSelect(input){
   var file=input.files[0];if(!file)return;
@@ -1050,7 +1071,7 @@ function cancelImport(){
   g('bk-file').value='';
 }
 function save(){localStorage.setItem('uv5_ent',JSON.stringify(entries));localStorage.setItem('uv5_cl',JSON.stringify(clinicas));}
- 
+
 // ── Event delegation na lista de lançamentos (evita onclick inline com aspas — problemático no iOS) ──
 document.addEventListener('click',function(ev){
   var btn=ev.target.closest('[data-act]');
@@ -1062,7 +1083,7 @@ document.addEventListener('click',function(ev){
   else if(act==='del'){delE(id);}
   else if(act==='pdf'){openPdfViewer(id);}
 });
- 
+
 // ── Sistema de toast (substitui alert) ──
 var _toastTimer=null;
 function showToast(msg, color){
@@ -1080,7 +1101,7 @@ function showToast(msg, color){
     t.style.transform='translateX(-50%) translateY(20px)';
   },2800);
 }
- 
+
 // ── Confirmação inline (substitui confirm() — bloqueado em alguns contextos iOS) ──
 var _confirmCb=null;
 function showConfirm(msg, ico, btnColor, cb){
@@ -1119,7 +1140,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeOv('ov
 </script>
 <!-- TOAST FEEDBACK -->
 <div id="toast" style="position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--green);color:#0a1018;padding:12px 22px;border-radius:12px;font-family:var(--fh);font-size:15px;font-weight:700;z-index:9999;white-space:nowrap;box-shadow:0 4px 20px rgba(0,230,118,.4);opacity:0;transition:opacity .2s,transform .2s;pointer-events:none"></div>
- 
+
 <!-- MODAL DE CONFIRMAÇÃO INLINE (substitui confirm() no iOS) -->
 <div id="ov-confirm" style="position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:500;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;visibility:hidden;transition:opacity .2s;backdrop-filter:blur(4px)">
   <div style="background:#1a1e2a;border:1px solid var(--border2);border-radius:18px;padding:24px;width:100%;max-width:320px;text-align:center">
@@ -1133,4 +1154,3 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeOv('ov
 </div>
 </body>
 </html>
- 
